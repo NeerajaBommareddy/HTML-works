@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="Mytimer.js">
+    
+    </script>
+    <style>
+        #demo1{
+            height: 300px;
+            width: 300px;
+            margin-top: 2%;
+            font-family: serif;
+            font-style: bold;
+            font-size: 2.5em;
+            border: 10px solid black;
+            animation: example 0.5s infinite;
+        }
+        @keyframes example {
+            from{background-color: pink;} to {background-color: turquoise;}
+        }
+        #test{
+            animation: example1;
+        
+        }
+        @keyframes example1 {
+                0%  {left:0px; top:0px;}
+                25%  {left:200px; top:0px;}
+                50%  {left:200px; top:200px;}
+                75%  {left:0px; top:200px;}
+                100% {left:0px; top:0px;}
+            
+        }
+    </style>
+   
+</head>
+<body> 
+    
+    <div class="container-fluid text-light text-center bg-danger py-4">
+        <h1 class="mb-0">Timer</h1> 
+    </div>
+    <div class="py-5 text-center bg-dark">
+    
+        <input type="number" placeholder="dd" id="days">
+ <input type="number" placeholder="hh" id="hour">
+ <input type="number" placeholder="mm" id="min">
+ <button onclick="clock()">setTime</button>
+</div>
+ <div class="d-flex justify-content-center"><div class="rounded-circle text-center" id="demo1"><span id="test">Hello<p id="demo">Hi</p></span></div>
+ </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <script>
+        count=0;
+        function edit(k){
+                console.log(k);
+                var x=document.getElementsByTagName("LI");
+                // var m=document.getElementsByClassName("btn btn-danger");
+                var p=document.createElement("span");
+                var q=document.createTextNode("X");
+                p.className="btn btn-danger";
+                p.name="remove";
+                p.appendChild(q);
+                x[k].appendChild(p);
+
+                var m=document.getElementsByClassName("btn btn-danger");
+                    for(i=0;i<m.length;i++){ 
+                        m[i].onclick=function(){
+                            var n=this.parentElement;
+                            n.style.display="none";
+                        }
+                    }
+            
+
+            var g=document.createElement("span");
+            var h=document.createTextNode("\u2713");
+            g.className="btn btn-success";
+            g.appendChild(h);
+            x[k].appendChild(g);
+
+            var m=document.getElementsByClassName("btn btn-success");
+                for(i=0;i<m.length;i++){ 
+                    m[i].onclick=function(){
+                        var n=this.parentElement;
+                        n.style.textDecoration="line-through";
+                    }
+                }
+        
+        }      
+var p=0;
+
+function Add(){
+
+    var a=document.getElementById("var").value;
+    var b=document.createElement("li");
+    var c=document.createTextNode(a);
+    b.appendChild(c);
+    if(a===''){
+        alert("enter valid task");
+    }
+    else{
+
+    document.getElementById("list").appendChild(b);
+    edit(p);
+    p=p+1;
+    }
+    var d=document.getElementById("list").getElementsByTagName('li');
+    
+    for(var i=0;i<d.length;i++){
+       
+        var x = Math.floor(Math.random() * 256);    
+         var y = Math.floor(Math.random() * 256);    
+          var z = Math.floor(Math.random() * 256);     
+          var bgColor = "rgb(" + x + "," + y + "," + z + ")"; 
+               
+    
+        d[i].style.backgroundColor=bgColor;
+        d[i].style.fontSize="xx-large";
+        
+
+    
+    }
+    
+}
+
+    </script>
+    </head>
+    <body class="bg-info">
+        <div class="text-center bg-danger">
+           <h1 class="text-light mb-0 pt-2 pb-3">My To-do's</h1>
+        </div>
+          
+            <div class="d-flex justify-content-center bg-success">
+                <input name="task" class="form-control w-25" type="text" id="var" placeholder="add task">
+                <button class="btn btn-primary pt-1 pb-1" onclick="Add()">add</button>
+            </div>
+        
+            <div class="bg-info text-dark">
+                <h3 class="bg-warning text-center mb-0" id="demo">My Tasks</h3>
+                <div class="d-flex text-dark pt-5">
+                  <ul id="list" style="width:max-content; border:10px solid orangered;">
+        
+                  </ul>
+                </div>
+
+            </div>
+        
+        
+    </body>
+    </html>
